@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 395394661
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a6a400b40d9cd3bc8fa2688a0c283601
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6f90f3013aad93820226c5988e8ad8d3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/World/Prefabs/Characters/Man_Character_3.prefab
+Dependencies: []

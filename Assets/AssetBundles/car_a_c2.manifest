@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 1491565776
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a2715730e01b6dbd0334a6cbb74e7c9a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2d32290e67067481e95786723f9c8485
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/World/Prefabs/Vehicles/Car_A_C2.prefab
+Dependencies: []

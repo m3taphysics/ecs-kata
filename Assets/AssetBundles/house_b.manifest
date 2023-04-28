@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 3420067009
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5556ca2aa66f84615e07ae3c87e4b8a3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 00e5b91d93917f19ed01769211de70e5
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/World/Prefabs/Buildings/House_B.prefab
+Dependencies:
+- C:/Users/ashle/Downloads/ArchECS-Unity (1)/Assets/AssetBundles/cooler_a
+- C:/Users/ashle/Downloads/ArchECS-Unity (1)/Assets/AssetBundles/satellite_dish_a
