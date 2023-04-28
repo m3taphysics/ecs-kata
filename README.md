@@ -2,7 +2,7 @@
 
 Your mission is to create a pure ECS based solution to the following problem. My definition of pure ECS is the following:
 
-- Components can only store state and data, or functions to mutate the underlying state. Such as accessors.
+- Components can only store data, or functions to mutate the underlying state, or pure accessors.
 - Systems should follow the SRP and only do one thing. Such as update the position of an entity.
 - Entities are just an ID, and a collection of components.
 - ECS code lives inside the Scripts/ECS folder and must not reference any Unity code.
@@ -17,6 +17,10 @@ The food has no ability to grow and create more food, to keep the hungry monster
 Write a pure ECS solution to this problem, spawn food, and make the monster hunt for the food.
 
 ## Notes
+
+"World" is the name of the inital scene. Prefabs "Character" and "Collectable" are already created.
+
+
 
 There are two example systems that you can use as a starting point. They are located in the Scripts/ECS/Systems folder.
 
