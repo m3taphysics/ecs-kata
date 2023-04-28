@@ -20,9 +20,9 @@ Write a pure ECS solution to this problem, spawn food, and make the monster hunt
 
 "World" is the name of the inital scene. Prefabs "Character" and "Collectable" are already created.
 
-
-
 There are two example systems that you can use as a starting point. They are located in the Scripts/ECS/Systems folder.
+
+The initial instantiates 1000 entities with two component types and then unity reflects the state of this in the view using IVisibilitySystem. 
 
 VisibilitySystem.cs - This handles instantiating objects from a pool, then showing and hiding them.
 LiveAndDieSystem.cs - This is an example of a system that mutates the state of a component using Arch queries.

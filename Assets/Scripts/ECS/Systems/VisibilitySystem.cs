@@ -3,7 +3,6 @@ using Arch.Core;
 using Arch.System;
 using ECS.Components;
 using ECS.Interfaces;
-using UnityEngine;
 
 namespace ECS.Systems
 {
