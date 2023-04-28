@@ -19,6 +19,7 @@ Write a pure ECS solution to this problem, spawn food, and make the monster hunt
 If you manage to complete this quickly, then bonus points for any one of these: 
 * The monster performs a spin action of excitement when it eats food.
 * The monster gets fatter and slower for each pieces of food it eats.
+* Two different food types, one that makes the monster fatter, and one that makes the monster faster.
 
 ## Notes
 
