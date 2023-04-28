@@ -16,6 +16,10 @@ The world has no ability to grow and create more food, to keep the hungry monste
 
 Write a pure ECS solution to this problem, spawn food, and make the monster hunt for the food.
 
+If you manage to complete this quickly, then bonus points for any one of these: 
+* The monster performs a spin action of excitement when it eats food.
+* The monster gets fatter and slower for each pieces of food it eats.
+
 ## Notes
 
 "World" is the name of the inital scene. Prefabs "Character" and "Collectable" are already created.
