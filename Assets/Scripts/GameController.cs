@@ -13,9 +13,11 @@ using UnityEngine.Pool;
 public class GameController : MonoBehaviour
 {
     private Arch.System.Group<float> _systems;
-
+    
+    // ECS
     private World _world;
 
+    // Interfaces
     private IVisibilityListener _visibilityListener;
 
     // Start is called before the first frame update
@@ -31,6 +33,7 @@ public class GameController : MonoBehaviour
         );
         _systems.Initialize();                  // Inits all registered systems
 
+        // Create 1000 entities with the VisibilityComponent and LifeSpanComponent
         for (int i = 0; i < 1000; i++)
             _world.Create(new VisibilityComponent(VisibilityState.BecomingVisible), new LifeSpanComponent());
     }

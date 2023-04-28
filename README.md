@@ -1,3 +1,31 @@
-# power-up
+# ECS-KATA
 
-Power up is an endless Unity game that experiments with an ECS approach (using Arch) and handles streaming of asset bundles.
+Your mission is to create a pure ECS based solution to the following problem. My definition of pure ECS is the following:
+
+- Components can only store state and data, or functions to mutate the underlying state. Such as accessors.
+- Systems should follow the SRP and only do one thing. Such as update the position of an entity.
+- Entities are just an ID, and a collection of components.
+- ECS code lives inside the Scripts/ECS folder and must not reference any Unity code.
+- The ECS provides code contracts that should be implemented on the Unity side.
+
+## The Problem
+
+The cube monster is hungry but it has no ability to hunt for food.
+
+The food has no ability to grow and create more food, to keep the hungry monster alive.
+
+Write a pure ECS solution to this problem, spawn food, and make the monster hunt for the food.
+
+## Notes
+
+There are two example systems that you can use as a starting point. They are located in the Scripts/ECS/Systems folder.
+
+VisibilitySystem.cs - This handles instantiating objects from a pool, then showing and hiding them.
+LiveAndDieSystem.cs - This is an example of a system that mutates the state of a component using Arch queries.
+
+## References
+
+You can find documentation to Arch ECS here:
+
+https://github.com/genaray/Arch
+
