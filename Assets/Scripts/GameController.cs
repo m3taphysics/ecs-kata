@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
         _world = World.Create();
         _systems = new Arch.System.Group<float>(
         new VisibilitySystem(_world, _visibilityListener),
-        new LiveAndDieSystem(_world)
+        new CollectibleInstantiatorSystem(_world),
         );
         _systems.Initialize();                  // Inits all registered systems
 
