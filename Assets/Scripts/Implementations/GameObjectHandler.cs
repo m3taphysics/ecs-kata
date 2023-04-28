@@ -7,14 +7,9 @@ namespace Implementations
     {
         private readonly GameObject collectiblePrefab;
 
-        public GameObject Instantiate(Vector3 position, Quaternion rotation)
+        public GameObject Instantiate(GameObject prefab, Vector3 position, Quaternion rotation)
         {
             return Object.Instantiate(collectiblePrefab, position, rotation);
-        }
-        
-        public GameObject Destroy(GameObject gameObject)
-        {
-            
         }
     }
 }
