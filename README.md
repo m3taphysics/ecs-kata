@@ -12,7 +12,7 @@ Your mission is to create a pure ECS based solution to the following problem. My
 
 The cube monster is hungry but it has no ability to hunt for food.
 
-The food has no ability to grow and create more food, to keep the hungry monster alive.
+The world has no ability to grow and create more food, to keep the hungry monster alive.
 
 Write a pure ECS solution to this problem, spawn food, and make the monster hunt for the food.
 
