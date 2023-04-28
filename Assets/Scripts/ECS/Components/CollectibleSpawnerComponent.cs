@@ -6,5 +6,6 @@ namespace ECS.Components
     {
         public int maxAmount;
         public Rect area;
+        
     }
 }

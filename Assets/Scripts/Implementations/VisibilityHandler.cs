@@ -11,9 +11,9 @@ namespace Implementations
     /// </summary>
     public class VisibilityHandler : IVisibilityListener
     {
-        private Dictionary<int, GameObject> _entityDictionary;
-        private ObjectPool<GameObject> _entityPool;
-        private GameObject _poolParent;
+        private readonly Dictionary<int, GameObject> _entityDictionary;
+        private readonly ObjectPool<GameObject> _entityPool;
+        private readonly GameObject _poolParent;
 
         public VisibilityHandler()
         {
@@ -21,7 +21,7 @@ namespace Implementations
             _entityDictionary = new Dictionary<int, GameObject>();
             _entityPool = new ObjectPool<GameObject>(() =>
                 {
-                    var go =  new GameObject
+                    var go = new GameObject
                     {
                         transform =
                         {
@@ -30,26 +30,15 @@ namespace Implementations
                     };
                     return go;
                 },
-                (GameObject obj) =>
-                {
-                    obj.SetActive(true);
-                }, (GameObject obj) =>
-                {
-                    obj.SetActive(false);
-                });
+                obj => { obj.SetActive(true); }, obj => { obj.SetActive(false); });
         }
 
         public void OnChange(VisibilityComponent visibility)
         {
-            if (visibility.State == VisibilityState.Visible)
-            {
-                _entityDictionary[visibility.Identity] = _entityPool.Get();
-            }
+            if (visibility.State == VisibilityState.Visible) _entityDictionary[visibility.Identity] = _entityPool.Get();
 
             if (visibility.State == VisibilityState.Invisible)
-            {
                 _entityPool.Release(_entityDictionary[visibility.Identity]);
-            }
         }
     }
 }

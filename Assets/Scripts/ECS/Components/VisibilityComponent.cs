@@ -7,11 +7,12 @@
         Visible,
         BecomingInvisible
     }
+
     public struct VisibilityComponent
     {
         public VisibilityState State;
         public readonly int Identity;
-        
+
         private static int _identityCount;
 
         public VisibilityComponent(VisibilityState state)
@@ -22,12 +23,12 @@
 
         public void BecomeVisible()
         {
-            this.State = VisibilityState.BecomingVisible;
+            State = VisibilityState.BecomingVisible;
         }
 
         public void BecomeInvisible()
         {
-            this.State = VisibilityState.BecomingInvisible;
+            State = VisibilityState.BecomingInvisible;
         }
     }
 }

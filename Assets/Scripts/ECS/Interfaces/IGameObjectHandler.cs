@@ -4,6 +4,8 @@ namespace ECS.Interfaces
 {
     public interface IGameObjectHandler
     {
-        GameObject Instantiate(GameObject prefab, Vector3 position, Quaternion rotation);
+        GameObject Instantiate(string prefabReference, Vector3 position, Quaternion rotation);
+
+        void Destroy(GameObject gameObject);
     }
 }

@@ -1,47 +1,48 @@
 ﻿using System.Runtime.CompilerServices;
 using Arch.Core;
+using Arch.Core.Extensions;
 using Arch.System;
 using ECS.Components;
 using ECS.Interfaces;
-using UnityEngine;
 
 namespace ECS.Systems
 {
-    public class CollectibleCreationSystem : BaseSystem<World, float>
+    public class GameObjectCreationSystem : BaseSystem<World, float>
     {
-        private readonly struct CreateGameObject : IForEachWithEntity<TransformComponent, CollectibleComponent>
+        private readonly struct CreateGameObject : IForEachWithEntity<TransformComponent, PrefabReferenceComponent>
         {
             private readonly IGameObjectHandler gameObjectHandler;
-            private readonly GameObject prefab;
-            public CreateGameObject(IGameObjectHandler gameObjectHandler, GameObject prefab)
+
+            public CreateGameObject(IGameObjectHandler gameObjectHandler)
             {
                 this.gameObjectHandler = gameObjectHandler;
-                this.prefab = prefab;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public void Update(in Entity entity, ref TransformComponent transform, ref CollectibleComponent collectible)
+            public void Update(in Entity entity, ref TransformComponent transform,
+                ref PrefabReferenceComponent prefabReferenceComponent)
             {
-                gameObjectHandler.Instantiate(prefab, transform.position, transform.rotation);
+                var component = new GameObjectComponent();
+                component.reference = gameObjectHandler.Instantiate(prefabReferenceComponent.gameObjectReference, transform.position,
+                    transform.rotation);
+                entity.Add(component);
             }
         }
 
-        private readonly QueryDescription query = new QueryDescription().WithAll<TransformComponent>().WithNone<GameObjectComponent>();
+        private readonly QueryDescription query = new QueryDescription()
+            .WithAll<TransformComponent, PrefabReferenceComponent>().WithNone<GameObjectComponent>();
+
         private CreateGameObject _createGameObject;
 
-        public CollectibleCreationSystem(World world, IGameObjectHandler gameObjectHandler) : base(world)
+        public GameObjectCreationSystem(World world, IGameObjectHandler gameObjectHandler) : base(world)
         {
-            _createGameObject = new CreateGameObject(gameObjectHandler, GetPrefab());
+            _createGameObject = new CreateGameObject(gameObjectHandler);
         }
 
         public override void Update(in float t)
         {
-            World.InlineQuery<CreateGameObject, TransformComponent, CollectibleComponent>(in query, ref _createGameObject);   
-        }
-
-        protected GameObject GetPrefab()
-        {
-            return null;
+            World.InlineEntityQuery<CreateGameObject, TransformComponent, PrefabReferenceComponent>(in query,
+                ref _createGameObject);
         }
     }
 }

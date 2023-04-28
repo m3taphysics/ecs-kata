@@ -22,19 +22,20 @@ namespace ECS.Systems
             var query = new QueryDescription().WithAll<CollectibleComponent>();
             var currentCollectibles = World.CountEntities(query);
 
-            int amountToSpawn = Math.Max(0, spawner .maxAmount - currentCollectibles);
+            var amountToSpawn = Math.Max(0, spawner.maxAmount - currentCollectibles);
 
-            for (int i = 0; i < amountToSpawn; i++)
+            for (var i = 0; i < amountToSpawn; i++)
             {
                 var collectible = new CollectibleComponent();
                 var transform = new TransformComponent();
+                var prefabReferenceComponet = new PrefabReferenceComponent("Collectable");
 
                 transform.position.x = Random.Range(spawner.area.xMin, spawner.area.xMax);
                 transform.position.z = Random.Range(spawner.area.yMin, spawner.area.yMax);
                 transform.rotation = Quaternion.identity;
                 transform.scale = Vector3.one;
 
-                World.Create(collectible, transform);
+                World.Create(collectible, transform, prefabReferenceComponet);
             }
         }
     }

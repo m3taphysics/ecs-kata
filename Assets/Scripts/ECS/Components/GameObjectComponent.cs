@@ -6,5 +6,4 @@ namespace ECS.Components
     {
         public GameObject reference;
     }
-
 }

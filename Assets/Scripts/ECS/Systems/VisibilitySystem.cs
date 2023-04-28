@@ -9,11 +9,12 @@ namespace ECS.Systems
     public partial class VisibilitySystem : BaseSystem<World, float>
     {
         private readonly IVisibilityListener _listener;
+
         public VisibilitySystem(World world, IVisibilityListener listener) : base(world)
         {
             _listener = listener;
         }
-        
+
         // Generates a query and calls that one automatically on BaseSystem.Update
         [Query]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,7 +26,7 @@ namespace ECS.Systems
                     visibility.State = VisibilityState.Invisible;
                     _listener.OnChange(visibility);
                     break;
-                
+
                 case VisibilityState.BecomingVisible:
                     visibility.State = VisibilityState.Visible;
                     _listener.OnChange(visibility);

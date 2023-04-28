@@ -4,6 +4,11 @@ namespace ECS.Components
 {
     public class PrefabReferenceComponent
     {
-        public GameObject prefab;
+        public string gameObjectReference;
+
+        public PrefabReferenceComponent(string prefabName)
+        {
+            this.gameObjectReference = prefabName;
+        }
     }
 }

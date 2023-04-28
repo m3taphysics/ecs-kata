@@ -6,5 +6,4 @@ namespace ECS.Interfaces
     {
         public void OnChange(VisibilityComponent visibility);
     }
-
 }
